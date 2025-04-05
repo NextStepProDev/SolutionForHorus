@@ -20,13 +20,7 @@ public class FolderCabinet implements Cabinet {
 
     @Override
     public List<Folder> findFolderBySize(String size) {
-        List<Folder> folderBySize = new LinkedList<>();
-        for (Folder folder : multiFolders) {
-            if (size.equalsIgnoreCase(folder.getSize())) {
-                folderBySize.add(folder);
-            }
-        }
-        return folderBySize;
+        return CabinetUtils.findFolderBySize(multiFolders, size);
     }
     @Override
     public int count() {
